@@ -1,14 +1,13 @@
 <?php
 
-
 use Pimple\Container;
-use Source\Product;
+use Source\ServiceProduct;
 
 require_once '../vendor/autoload.php';
 require_once 'config.php';
 require_once 'service.php';
 
 
-$value = $container['product']->list();
+$list = $container['serviceProduct']->list();
 
-var_dump($value);
+require_once 'index-list.php';
