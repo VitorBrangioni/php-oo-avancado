@@ -1,5 +1,6 @@
 <?php
 
+namespace Source;
 require_once 'IConn.php';
 
 class Conn implements IConn {
@@ -13,9 +14,7 @@ class Conn implements IConn {
 		$this->user = $user;
 		$this->pwd = $pwd;
 	}
-	public function connection(): PDO {
-		return $pdo = new \PDO($this->dsn, $this->user, $this->pwd);
-		
+	public function connection(): \PDO {
+		return new \PDO($this->dsn, $this->user, $this->pwd);
 	}
-	
 }
